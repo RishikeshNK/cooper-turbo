@@ -1,10 +1,6 @@
-import type { Metadata, Viewport } from "next";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
 
 import { cn } from "@cooper/ui";
-import { ThemeProvider, ThemeToggle } from "@cooper/ui/theme";
-import { Toaster } from "@cooper/ui/toast";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -15,29 +11,17 @@ import { env } from "~/env";
 export const metadata: Metadata = {
   metadataBase: new URL(
     env.VERCEL_ENV === "production"
-      ? "https://turbo.t3.gg"
+      ? "https://cooper-sandboxneu.vercel.app"
       : "http://localhost:3000",
   ),
-  title: "Create T3 Turbo",
-  description: "Simple monorepo with shared backend for web & mobile apps",
+  title: "Cooper",
+  description: "A Co-op Review Platform",
   openGraph: {
-    title: "Create T3 Turbo",
-    description: "Simple monorepo with shared backend for web & mobile apps",
-    url: "https://create-t3-turbo.vercel.app",
-    siteName: "Create T3 Turbo",
+    title: "Cooper",
+    description: "A Co-op Review Platform",
+    url: "https://cooper-sandboxneu.vercel.app",
+    siteName: "Cooper",
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@jullerino",
-    creator: "@jullerino",
-  },
-};
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {
@@ -46,17 +30,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
-          GeistSans.variable,
-          GeistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TRPCReactProvider>{props.children}</TRPCReactProvider>
-          <div className="absolute bottom-4 right-4">
-            <ThemeToggle />
-          </div>
-          <Toaster />
-        </ThemeProvider>
+        <TRPCReactProvider>{props.children}</TRPCReactProvider>
       </body>
     </html>
   );
