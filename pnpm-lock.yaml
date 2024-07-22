@@ -275,27 +275,6 @@ importers:
         specifier: 'catalog:'
         version: 5.5.4
 
-  packages/j:
-    devDependencies:
-      '@cooper/eslint-config':
-        specifier: workspace:*
-        version: link:../../tooling/eslint
-      '@cooper/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
-      '@cooper/tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/typescript
-      eslint:
-        specifier: 'catalog:'
-        version: 9.7.0
-      prettier:
-        specifier: 'catalog:'
-        version: 3.3.3
-      typescript:
-        specifier: 'catalog:'
-        version: 5.5.4
-
   packages/ui:
     dependencies:
       '@hookform/resolvers':

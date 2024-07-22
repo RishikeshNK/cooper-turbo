@@ -10,5 +10,10 @@ export default {
   schema: "./src/schema",
   out: "./drizzle",
   dialect: "postgresql",
-  dbCredentials: { url: nonPoolingUrl },
+  dbCredentials: {
+    url: nonPoolingUrl,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 } satisfies Config;
