@@ -13,6 +13,8 @@
     "clean:workspaces": "turbo run clean",
     "__DATABASE__________": "",
     "db:push": "turbo -F @cooper/db push",
+    "db:generate": "turbo -F @cooper/db generate",
+    "db:migrate": "turbo -F @cooper/db migrate",
     "db:studio": "turbo -F @cooper/db studio",
     "__DEVELOPMENT_______": "",
     "dev": "turbo watch dev",
@@ -31,9 +33,9 @@
   },
   "devDependencies": {
     "@cooper/prettier-config": "workspace:*",
-    "@turbo/gen": "^2.0.6",
+    "@turbo/gen": "^2.0.9",
     "prettier": "catalog:",
-    "turbo": "^2.0.6",
+    "turbo": "^2.0.9",
     "typescript": "catalog:"
   },
   "prettier": "@cooper/prettier-config"
