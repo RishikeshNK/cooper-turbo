@@ -36,14 +36,21 @@ export const Industry = {
   VETERINARY: "VETERINARY",
 } as const;
 
+export type IndustryType = (typeof Industry)[keyof typeof Industry];
+
 export const WorkEnvironment = {
   INPERSON: "INPERSON",
   HYBRID: "HYBRID",
   REMOTE: "REMOTE",
 } as const;
 
+export type WorkEnvironmentType =
+  (typeof WorkEnvironment)[keyof typeof WorkEnvironment];
+
 export const WorkTerm = {
   FALL: "FALL",
   SPRING: "SPRING",
   SUMMER: "SUMMER",
 } as const;
+
+export type WorkTermType = (typeof WorkTerm)[keyof typeof WorkTerm];

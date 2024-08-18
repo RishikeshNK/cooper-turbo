@@ -1,5 +1,7 @@
-export function enumToPgEnum(myEnum: any): [string, ...string[]] {
-  return Object.values(myEnum).map((value: any) => `${value}`) as [
+export function enumToPgEnum(
+  enumeration: Record<string, string>,
+): [string, ...string[]] {
+  return Object.values(enumeration).map((value: string) => `${value}`) as [
     string,
     ...string[],
   ];
