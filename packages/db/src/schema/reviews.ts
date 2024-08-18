@@ -9,6 +9,8 @@ import {
   uuid,
   varchar,
 } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
 
 import { enumToPgEnum } from "../utils/enums";
 import { Company } from "./companies";
@@ -66,3 +68,33 @@ export const ReviewRelations = relations(Review, ({ one }) => ({
     references: [Company.id],
   }),
 }));
+
+export const CreateReviewSchema = createInsertSchema(Review, {
+  workTerm: z.nativeEnum(WorkTerm),
+  workYear: z.number(),
+  overallRating: z.number().min(1).max(5),
+  cultureRating: z.number().min(1).max(5),
+  supervisorRating: z.number().min(1).max(5),
+  interviewRating: z.number().min(1).max(5),
+  interviewDifficulty: z.number().min(1).max(5),
+  interviewReview: z.string().optional(),
+  reviewHeadline: z.string(),
+  textReview: z.string(),
+  location: z.string().optional(),
+  hourlyPay: z.number().optional(),
+  workEnvironment: z.nativeEnum(WorkEnvironment),
+  drugTest: z.boolean(),
+  overtimeNormal: z.boolean(),
+  pto: z.boolean(),
+  federalHolidays: z.boolean(),
+  freeLunch: z.boolean(),
+  freeTransport: z.boolean(),
+  freeMerch: z.boolean(),
+  otherBenefits: z.string().nullish(),
+  roleId: z.string(),
+  profileId: z.string(),
+}).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});

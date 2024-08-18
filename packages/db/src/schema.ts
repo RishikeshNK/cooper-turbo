@@ -1,9 +1,9 @@
 import { Account } from "./schema/accounts";
 import { Company } from "./schema/companies";
 import { CreatePostSchema, Post } from "./schema/posts";
-import { Profile } from "./schema/profiles";
-import { Review } from "./schema/reviews";
-import { Role } from "./schema/roles";
+import { CreateProfileSchema, Profile } from "./schema/profiles";
+import { CreateReviewSchema, Review } from "./schema/reviews";
+import { CreateRoleSchema, Role } from "./schema/roles";
 import { Session } from "./schema/sessions";
 import { User } from "./schema/users";
 
@@ -17,4 +17,7 @@ export {
   User,
   Post,
   CreatePostSchema,
+  CreateProfileSchema,
+  CreateReviewSchema,
+  CreateRoleSchema,
 };

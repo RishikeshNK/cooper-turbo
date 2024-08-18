@@ -6,6 +6,8 @@ import {
   uuid,
   varchar,
 } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
 
 import { Review } from "./reviews";
 import { User } from "./users";
@@ -33,3 +35,22 @@ export const ProfileRelations = relations(Profile, ({ one, many }) => ({
   }),
   reviews: many(Review),
 }));
+
+const MAX_GRADUATION_LENGTH = 6;
+const MONTH_LB = 1;
+const MONTH_UB = 12;
+const YEAR_LB = new Date().getFullYear();
+const YEAR_UB = YEAR_LB + MAX_GRADUATION_LENGTH;
+
+export const CreateProfileSchema = createInsertSchema(Profile, {
+  firstName: z.string(),
+  lastName: z.string(),
+  major: z.string(),
+  minor: z.string().optional(),
+  graduationYear: z.number().min(YEAR_LB).max(YEAR_UB),
+  graduationMonth: z.number().min(MONTH_LB).max(MONTH_UB),
+}).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});

@@ -1,5 +1,7 @@
 import { relations, sql } from "drizzle-orm";
 import { pgTable, text, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
 
 import { Company } from "./companies";
 import { Review } from "./reviews";
@@ -23,3 +25,13 @@ export const RoleRelations = relations(Role, ({ one, many }) => ({
   }),
   reviews: many(Review),
 }));
+
+export const CreateRoleSchema = createInsertSchema(Role, {
+  title: z.string(),
+  description: z.string(),
+  companyId: z.string(),
+}).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});

@@ -1,5 +1,7 @@
 import { relations, sql } from "drizzle-orm";
 import { pgTable, text, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
 
 import { enumToPgEnum } from "../utils/enums";
 import { Industry } from "./misc";
@@ -23,3 +25,14 @@ export const CompanyRelations = relations(Company, ({ many }) => ({
   roles: many(Role),
   reviews: many(Review),
 }));
+
+export const CreateCompanySchema = createInsertSchema(Company, {
+  name: z.string(),
+  description: z.string().optional(),
+  industry: z.nativeEnum(Industry),
+  location: z.string(),
+}).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
