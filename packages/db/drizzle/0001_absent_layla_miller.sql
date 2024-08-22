@@ -8,14 +8,6 @@ CREATE TABLE IF NOT EXISTS "company" (
 	"updatedAt" timestamp with time zone
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "post" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"name" varchar(256) NOT NULL,
-	"content" text NOT NULL,
-	"created_at" timestamp DEFAULT now() NOT NULL,
-	"updatedAt" timestamp with time zone
-);
---> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "profile" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"firstName" varchar NOT NULL,

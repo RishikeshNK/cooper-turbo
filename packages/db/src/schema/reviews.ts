@@ -81,7 +81,7 @@ export const CreateReviewSchema = createInsertSchema(Review, {
   reviewHeadline: z.string(),
   textReview: z.string(),
   location: z.string().optional(),
-  hourlyPay: z.number().optional(),
+  hourlyPay: z.string().optional(),
   workEnvironment: z.nativeEnum(WorkEnvironment),
   drugTest: z.boolean(),
   overtimeNormal: z.boolean(),

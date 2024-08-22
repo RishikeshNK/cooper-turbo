@@ -31,8 +31,6 @@ export const CreateCompanySchema = createInsertSchema(Company, {
   description: z.string().optional(),
   industry: z.nativeEnum(Industry),
   location: z.string(),
-}).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+}) satisfies z.ZodType<
+  Omit<typeof Company.$inferInsert, "id" | "createdAt" | "updatedAt">
+>;

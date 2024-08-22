@@ -1,5 +1,5 @@
 import { Account } from "./schema/accounts";
-import { Company } from "./schema/companies";
+import { Company, CreateCompanySchema } from "./schema/companies";
 import { CreatePostSchema, Post } from "./schema/posts";
 import { CreateProfileSchema, Profile } from "./schema/profiles";
 import { CreateReviewSchema, Review } from "./schema/reviews";
@@ -16,6 +16,7 @@ export {
   Role,
   User,
   Post,
+  CreateCompanySchema,
   CreatePostSchema,
   CreateProfileSchema,
   CreateReviewSchema,
