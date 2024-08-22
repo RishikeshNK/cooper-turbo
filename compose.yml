@@ -1,6 +1,7 @@
 version: "3.8"
 
 services:
+  # FIXME: This currently does not work with the Drizzle migrations
   postgres:
     image: postgres
     restart: always

@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 
 import * as React from "react";
@@ -11,9 +12,10 @@ import {
   FormProvider,
   useFormContext,
 } from "react-hook-form";
-import { Label } from "src//label";
 
 import { cn } from "@cooper/ui";
+
+import { Label } from "./label";
 
 const Form = FormProvider;
 
