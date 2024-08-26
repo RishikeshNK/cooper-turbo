@@ -1,6 +1,6 @@
 import { cn } from "@cooper/ui";
 
-import { FormCard } from "~/components/form/form-card";
+import { FormCard } from "~/app/_components/form/form-card";
 
 /**
  * FormSection component creates a section within a FormCard with a specified title.

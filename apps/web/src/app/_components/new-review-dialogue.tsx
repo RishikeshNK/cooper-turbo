@@ -14,8 +14,8 @@ import {
   DialogTrigger,
 } from "@cooper/ui/dialog";
 
-import type { ComboBoxOption } from "~/components/combo-box";
-import ComboBox from "~/components/combo-box";
+import type { ComboBoxOption } from "~/app/_components/combo-box";
+import ComboBox from "~/app/_components/combo-box";
 import { api } from "~/trpc/react";
 
 /**

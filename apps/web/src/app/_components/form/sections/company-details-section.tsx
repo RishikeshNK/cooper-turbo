@@ -12,8 +12,8 @@ import {
 import { RadioGroup, RadioGroupItem } from "@cooper/ui/radio-group";
 import { Textarea } from "@cooper/ui/textarea";
 
-import { FormSection } from "~/components/form/form-section";
-import { benefits } from "~/components/form/review-form";
+import { FormSection } from "~/app/_components/form/form-section";
+import { benefits } from "~/app/_components/form/review-form";
 
 interface CompanyDetailsSectionProps {
   companyName: string;

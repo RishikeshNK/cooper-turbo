@@ -18,8 +18,8 @@ import {
   CoopCycleSection,
   RatingsSection,
   ReviewSection,
-} from "~/components/form/sections";
-import { SubmissionConfirmation } from "~/components/form/submission-confirmation";
+} from "~/app/_components/form/sections";
+import { SubmissionConfirmation } from "~/app/_components/form/submission-confirmation";
 import { api } from "~/trpc/react";
 
 const formSchema = z.object({
