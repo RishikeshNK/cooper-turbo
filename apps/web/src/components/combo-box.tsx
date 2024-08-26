@@ -13,10 +13,10 @@ import {
 } from "@cooper/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@cooper/ui/popover";
 
-export type ComboBoxOption<T> = {
+export interface ComboBoxOption<T> {
   value: T;
   label: string;
-};
+}
 
 interface ComboBoxProps {
   defaultLabel: string;

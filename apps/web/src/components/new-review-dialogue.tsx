@@ -14,7 +14,8 @@ import {
   DialogTrigger,
 } from "@cooper/ui/dialog";
 
-import ComboBox, { ComboBoxOption } from "~/components/combo-box";
+import type { ComboBoxOption } from "~/components/combo-box";
+import ComboBox from "~/components/combo-box";
 import { api } from "~/trpc/react";
 
 /**
@@ -54,7 +55,7 @@ export function NewReviewDialog() {
     const companyId =
       companyValuesAndLabels.find(
         (company) => company.label === newCompanyLabel,
-      )?.value || "";
+      )?.value ?? "";
     const filteredRoleValuesAndLabels = roles.data
       ? roles.data
           .filter((role) => role.companyId === companyId)
@@ -88,7 +89,7 @@ export function NewReviewDialog() {
             event.preventDefault();
             const roleId =
               roleValuesAndLabels.find((role) => role.label === roleLabel)
-                ?.value || "";
+                ?.value ?? "";
             router.push("/review?id=" + roleId);
           }}
         >
