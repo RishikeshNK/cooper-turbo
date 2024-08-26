@@ -4,7 +4,7 @@ import { cn } from "@cooper/ui";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
-import "~/app/globals.css";
+import "~/app/styles/globals.css";
 
 import { env } from "~/env";
 
