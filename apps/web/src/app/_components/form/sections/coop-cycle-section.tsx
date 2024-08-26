@@ -12,7 +12,7 @@ import {
 } from "@cooper/ui/form";
 import { RadioGroup, RadioGroupItem } from "@cooper/ui/radio-group";
 
-import { FormSection } from "~/components/form/form-section";
+import { FormSection } from "~/app/_components/form/form-section";
 
 interface CoopCycleSectionProps {
   textColor: string;

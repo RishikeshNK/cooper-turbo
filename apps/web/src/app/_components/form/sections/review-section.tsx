@@ -10,7 +10,7 @@ import {
 import { Input } from "@cooper/ui/input";
 import { Textarea } from "@cooper/ui/textarea";
 
-import { FormSection } from "~/components/form/form-section";
+import { FormSection } from "~/app/_components/form/form-section";
 
 /**
  * ReviewSection component renders form fields for writing a co-op review.

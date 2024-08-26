@@ -10,8 +10,8 @@ import {
 import { RadioGroup, RadioGroupItem } from "@cooper/ui/radio-group";
 import { Textarea } from "@cooper/ui/textarea";
 
-import { FormSection } from "~/components/form/form-section";
-import { Rating } from "~/components/form/rating";
+import { FormSection } from "~/app/_components/form/form-section";
+import { Rating } from "~/app/_components/form/rating";
 
 /**
  * RatingsSection component renders form fields for rating various
