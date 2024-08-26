@@ -12,7 +12,6 @@ import {
 import { RadioGroup, RadioGroupItem } from "@cooper/ui/radio-group";
 import { Textarea } from "@cooper/ui/textarea";
 
-import type { ReviewFormType } from "~/components/form/review-form";
 import { FormSection } from "~/components/form/form-section";
 import { benefits } from "~/components/form/review-form";
 
@@ -25,24 +24,22 @@ interface CompanyDetailsSectionProps {
  * CompanyDetailsSection component renders form fields for capturing
  * company details related to the co-op experience.
  */
-export function CompanyDetailsSection({
-  companyName,
-  textColor,
-}: CompanyDetailsSectionProps) {
-  const form = useFormContext<ReviewFormType>();
+export function CompanyDetailsSection(props: CompanyDetailsSectionProps) {
+  const form = useFormContext();
   const [otherBenefits, setOtherBenefits] = useState(false);
 
   return (
-    <FormSection title="Company Details" className={textColor}>
+    <FormSection title="Company Details" className={props.textColor}>
       <FormField
         control={form.control}
-        name={"workEnvionment" as keyof ReviewFormType}
+        name="workEnvironment"
         render={({ field }) => (
           <FormItem className="space-y-6">
             <FormLabel>What kind of work model?*</FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 defaultValue={field.value}
                 className="flex flex-col space-y-3"
               >
@@ -81,13 +78,14 @@ export function CompanyDetailsSection({
       />
       <FormField
         control={form.control}
-        name={"drugTest" as keyof ReviewFormType}
+        name="drugTest"
         render={({ field }) => (
           <FormItem className="space-y-6">
-            <FormLabel>Did {companyName} drug test?*</FormLabel>
+            <FormLabel>Did {props.companyName} drug test?*</FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 defaultValue={field.value}
                 className="flex flex-col space-y-3"
               >
@@ -117,13 +115,14 @@ export function CompanyDetailsSection({
       />
       <FormField
         control={form.control}
-        name={"overtimeNormal" as keyof ReviewFormType}
+        name="overtimeNormal"
         render={({ field }) => (
           <FormItem className="space-y-6">
             <FormLabel>Was working overtime common?*</FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 defaultValue={field.value}
                 className="flex flex-col space-y-3"
               >
@@ -151,16 +150,19 @@ export function CompanyDetailsSection({
           </FormItem>
         )}
       />
-      <FormLabel>Select the benefit(s) that {companyName} offered</FormLabel>
+      <FormLabel>
+        Select the benefit(s) that {props.companyName} offered
+      </FormLabel>
       {benefits.map((benefit) => (
         <FormField
           key={benefit.field}
           control={form.control}
-          name={benefit.field as keyof ReviewFormType}}
+          name={benefit.field}
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-4 space-y-0">
               <FormControl>
                 <Checkbox
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                   checked={field.value}
                   onCheckedChange={field.onChange}
                 />
@@ -181,7 +183,7 @@ export function CompanyDetailsSection({
       {otherBenefits && (
         <FormField
           control={form.control}
-          name={"otherBenefits" as keyof ReviewFormType}
+          name="otherBenefits"
           render={({ field }) => (
             <FormItem>
               <FormControl>
