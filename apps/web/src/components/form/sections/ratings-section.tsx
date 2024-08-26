@@ -89,6 +89,7 @@ export function RatingsSection({ textColor }: { textColor: string }) {
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 defaultValue={field.value}
                 className="flex w-full flex-col justify-between space-y-3 text-center sm:flex-row sm:space-y-0"
               >

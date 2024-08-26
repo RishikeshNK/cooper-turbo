@@ -42,6 +42,7 @@ export function CoopCycleSection({ textColor }: CoopCycleSectionProps) {
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 defaultValue={field.value}
                 className="flex flex-col space-y-3"
               >
