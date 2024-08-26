@@ -54,6 +54,8 @@ export const Review = pgTable("review", {
   companyId: varchar("companyId").notNull(),
 });
 
+export type ReviewType = typeof Review.$inferSelect;
+
 export const ReviewRelations = relations(Review, ({ one }) => ({
   role: one(Role, {
     fields: [Review.roleId],

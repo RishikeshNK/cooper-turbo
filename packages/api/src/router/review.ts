@@ -16,7 +16,7 @@ export const reviewRouter = {
   getByRole: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(({ ctx, input }) => {
-      return ctx.db.query.Review.findFirst({
+      return ctx.db.query.Review.findMany({
         where: eq(Review.roleId, input.id),
       });
     }),

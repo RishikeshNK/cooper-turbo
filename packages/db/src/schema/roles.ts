@@ -18,6 +18,8 @@ export const Role = pgTable("role", {
   }).$onUpdateFn(() => sql`now()`),
 });
 
+export type RoleType = typeof Role.$inferSelect;
+
 export const RoleRelations = relations(Role, ({ one, many }) => ({
   company: one(Company, {
     fields: [Role.companyId],

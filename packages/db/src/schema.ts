@@ -1,7 +1,14 @@
 import type { CompanyType } from "./schema/companies";
+import type {
+  IndustryType,
+  WorkEnvironmentType,
+  WorkTermType,
+} from "./schema/misc";
+import type { ReviewType } from "./schema/reviews";
+import type { RoleType } from "./schema/roles";
 import { Account } from "./schema/accounts";
 import { Company, CreateCompanySchema } from "./schema/companies";
-import { WorkEnvironment, WorkTerm } from "./schema/misc";
+import { Industry, WorkEnvironment, WorkTerm } from "./schema/misc";
 import { CreateProfileSchema, Profile } from "./schema/profiles";
 import { CreateReviewSchema, Review } from "./schema/reviews";
 import { CreateRoleSchema, Role } from "./schema/roles";
@@ -14,6 +21,7 @@ export {
   Company,
   Profile,
   Review,
+  Industry,
   Role,
   User,
   CreateCompanySchema,
@@ -24,4 +32,11 @@ export {
   WorkEnvironment,
 };
 
-export type { CompanyType };
+export type {
+  CompanyType,
+  ReviewType,
+  RoleType,
+  IndustryType,
+  WorkEnvironmentType,
+  WorkTermType,
+};
