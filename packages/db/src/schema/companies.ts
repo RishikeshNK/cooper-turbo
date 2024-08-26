@@ -21,6 +21,8 @@ export const Company = pgTable("company", {
   }).$onUpdateFn(() => sql`now()`),
 });
 
+export type CompanyType = typeof Company.$inferSelect;
+
 export const CompanyRelations = relations(Company, ({ many }) => ({
   roles: many(Role),
   reviews: many(Review),
