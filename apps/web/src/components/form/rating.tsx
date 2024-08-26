@@ -1,5 +1,5 @@
+import type { FieldPath } from "react-hook-form";
 import { forwardRef, useState } from "react";
-import type { FieldPath} from "react-hook-form";
 import { useFormContext } from "react-hook-form";
 
 import { cn } from "@cooper/ui";
