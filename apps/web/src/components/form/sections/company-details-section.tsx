@@ -12,6 +12,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@cooper/ui/radio-group";
 import { Textarea } from "@cooper/ui/textarea";
 
+import type { ReviewFormType } from "~/components/form/review-form";
 import { FormSection } from "~/components/form/form-section";
 import { benefits } from "~/components/form/review-form";
 
@@ -28,14 +29,14 @@ export function CompanyDetailsSection({
   companyName,
   textColor,
 }: CompanyDetailsSectionProps) {
-  const form = useFormContext();
+  const form = useFormContext<ReviewFormType>();
   const [otherBenefits, setOtherBenefits] = useState(false);
 
   return (
     <FormSection title="Company Details" className={textColor}>
       <FormField
         control={form.control}
-        name="workEnvironment"
+        name={"workEnvionment" as keyof ReviewFormType}
         render={({ field }) => (
           <FormItem className="space-y-6">
             <FormLabel>What kind of work model?*</FormLabel>
@@ -80,7 +81,7 @@ export function CompanyDetailsSection({
       />
       <FormField
         control={form.control}
-        name="drugTest"
+        name={"drugTest" as keyof ReviewFormType}
         render={({ field }) => (
           <FormItem className="space-y-6">
             <FormLabel>Did {companyName} drug test?*</FormLabel>
@@ -116,7 +117,7 @@ export function CompanyDetailsSection({
       />
       <FormField
         control={form.control}
-        name="overtimeNormal"
+        name={"overtimeNormal" as keyof ReviewFormType}
         render={({ field }) => (
           <FormItem className="space-y-6">
             <FormLabel>Was working overtime common?*</FormLabel>
@@ -155,7 +156,7 @@ export function CompanyDetailsSection({
         <FormField
           key={benefit.field}
           control={form.control}
-          name={benefit.field}
+          name={benefit.field as keyof ReviewFormType}}
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-4 space-y-0">
               <FormControl>
@@ -180,7 +181,7 @@ export function CompanyDetailsSection({
       {otherBenefits && (
         <FormField
           control={form.control}
-          name="otherBenefits"
+          name={"otherBenefits" as keyof ReviewFormType}
           render={({ field }) => (
             <FormItem>
               <FormControl>

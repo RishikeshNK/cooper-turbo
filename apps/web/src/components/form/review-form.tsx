@@ -246,7 +246,7 @@ export function ReviewForm(props: ReviewFormProps) {
         await form.handleSubmit(onSubmit)();
       }
       setCurrentStep((step) => step + 1);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+       
       scroll.scrollToTop({ duration: 250, smooth: true });
     }
   };
@@ -256,7 +256,7 @@ export function ReviewForm(props: ReviewFormProps) {
     if (currentStep > 0) {
       setCurrentStep((prev) => prev - 1);
     }
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+     
     scroll.scrollToTop({ duration: 250, smooth: true });
   };
 

@@ -1,10 +1,11 @@
 import { forwardRef, useState } from "react";
-import { FieldPath, useFormContext } from "react-hook-form";
+import type { FieldPath} from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 import { cn } from "@cooper/ui";
 
 // FIXME: Fix this import at some point (form context)
-import { ReviewFormType } from "~/components/form/review-form";
+import type { ReviewFormType } from "~/components/form/review-form";
 
 type RatingProps = React.InputHTMLAttributes<HTMLInputElement>;
 
