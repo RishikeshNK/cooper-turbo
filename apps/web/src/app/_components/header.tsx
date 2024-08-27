@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
 
+import type { Session } from "@cooper/auth";
 import { cn } from "@cooper/ui";
 
 import LoginButton from "~/app/_components/auth/login-button";
@@ -12,12 +12,15 @@ import LogoutButton from "~/app/_components/auth/logout-button";
 import { NewReviewDialog } from "~/app/_components/reviews/new-review-dialogue";
 import { altivoFont } from "~/app/styles/font";
 
+interface HeaderProps {
+  session: Session | null;
+}
+
 /**
  * This is the header component. (Probably) should use header-layout instead
  * @returns The header component for the website
  */
-export default function Header() {
-  const session = useSession();
+export default function Header({ session }: HeaderProps) {
   const pathname = usePathname();
 
   const outerWidth = "w-40";
@@ -77,8 +80,8 @@ export default function Header() {
         )}
       >
         {/* TODO: only show this if the user is below the max number of reviews allowed */}
-        {session.data && <NewReviewDialog />}
-        {session.data ? <LogoutButton /> : <LoginButton />}
+        {session && <NewReviewDialog />}
+        {session ? <LogoutButton /> : <LoginButton />}
       </div>
     </header>
   );
