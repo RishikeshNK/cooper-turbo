@@ -22,8 +22,6 @@ interface HeaderProps {
 export default function Header({ session, auth }: HeaderProps) {
   const pathname = usePathname();
 
-  console.log(session);
-
   const outerWidth = "w-40";
 
   return (
