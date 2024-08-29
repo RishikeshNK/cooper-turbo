@@ -72,7 +72,7 @@ export function NewReviewDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="border-cooper-yellow-500 bg-cooper-yellow-500 hover:border-cooper-yellow-300 hover:bg-cooper-yellow-300 h-9 border-none px-4 py-3 text-sm font-normal">
+        <Button className="border-cooper-yellow-500 bg-cooper-yellow-500 hover:border-cooper-yellow-300 hover:bg-cooper-yellow-300 h-9 rounded-full border-none px-4 py-3 text-sm font-semibold text-white">
           + New Review
         </Button>
       </DialogTrigger>
