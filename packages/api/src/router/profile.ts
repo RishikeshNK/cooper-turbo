@@ -23,7 +23,7 @@ export const profileRouter = {
 
   getCurrentUser: protectedProcedure.query(({ ctx }) => {
     return ctx.db.query.Profile.findFirst({
-      where: eq(Profile.id, ctx.session.user.id),
+      where: eq(Profile.userId, ctx.session.user.id),
     });
   }),
 
