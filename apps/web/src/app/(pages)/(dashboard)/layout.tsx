@@ -1,5 +1,3 @@
-import "~/app/styles/globals.css";
-
 import HeaderLayout from "~/app/_components/header-layout";
 
 export default function RootLayout({

@@ -23,6 +23,8 @@ interface HeaderProps {
 export default function Header({ session }: HeaderProps) {
   const pathname = usePathname();
 
+  console.log(session);
+
   const outerWidth = "w-40";
 
   return (
@@ -81,7 +83,7 @@ export default function Header({ session }: HeaderProps) {
       >
         {/* TODO: only show this if the user is below the max number of reviews allowed */}
         {session && <NewReviewDialog />}
-        {session ? <LogoutButton /> : <LoginButton />}
+        {/* {session ? <LogoutButton /> : <LoginButton />} */}
       </div>
     </header>
   );

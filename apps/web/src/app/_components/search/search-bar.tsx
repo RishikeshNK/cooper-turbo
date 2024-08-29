@@ -7,7 +7,7 @@ export function SearchBar() {
   const form = useFormContext();
 
   return (
-    <div className="w-4/5 rounded-full border-2 shadow-md shadow-gray-400 lg:w-3/4">
+    <div className="w-4/5 rounded-full shadow-lg shadow-gray-400 lg:w-3/4">
       <FormField
         control={form.control}
         name="searchText"
