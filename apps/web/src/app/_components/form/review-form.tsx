@@ -280,7 +280,7 @@ export function ReviewForm(props: ReviewFormProps) {
 
   if (currentStep === 0) {
     return (
-      <div className="flex flex-col border-2">
+      <div className="flex flex-col">
         <div className="bg-cooper-blue-700 z-10 -mb-4 h-4 w-full rounded-t-xl" />
         <div className="text-cooper-blue-600 flex h-[80vh] w-full items-center justify-center rounded-xl bg-white pl-24 pr-4">
           <div className="flex w-1/2 flex-col space-y-6">

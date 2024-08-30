@@ -57,7 +57,6 @@ export default async function Page({
       <div className="bg-cooper-blue-200 min-h-screen">
         <div className="mx-auto w-full px-4 py-16">
           <div className="mx-auto max-w-6xl">
-            <h1>HERE</h1>
             <ReviewForm
               company={company}
               roleId={role.id}
