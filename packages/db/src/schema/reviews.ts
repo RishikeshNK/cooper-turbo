@@ -12,7 +12,6 @@ import {
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-import { enumToPgEnum } from "../utils/enums";
 import { Company } from "./companies";
 import { WorkEnvironment, WorkTerm } from "./misc";
 import { Profile } from "./profiles";
@@ -20,7 +19,7 @@ import { Role } from "./roles";
 
 export const Review = pgTable("review", {
   id: uuid("id").notNull().primaryKey().defaultRandom(),
-  workTerm: varchar("workTerm", enumToPgEnum(WorkTerm)).notNull(),
+  workTerm: varchar("workTerm").notNull(),
   workYear: integer("workYear").notNull(),
   overallRating: integer("overallRating").notNull(),
   cultureRating: integer("cultureRating").notNull(),
@@ -32,10 +31,7 @@ export const Review = pgTable("review", {
   textReview: text("textReview").notNull(),
   location: varchar("location"),
   hourlyPay: decimal("hourlyPay"),
-  workEnvironment: varchar(
-    "workEnvironment",
-    enumToPgEnum(WorkEnvironment),
-  ).notNull(),
+  workEnvironment: varchar("workEnvironment").notNull(),
   drugTest: boolean("drugTest").notNull(),
   overtimeNormal: boolean("overtimeNormal").notNull(),
   pto: boolean("pto").notNull(),
