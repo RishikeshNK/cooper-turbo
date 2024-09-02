@@ -72,7 +72,7 @@ export function NewReviewDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="border-cooper-yellow-500 bg-cooper-yellow-500 hover:border-cooper-yellow-300 hover:bg-cooper-yellow-300 h-9 rounded-full border-none px-4 py-3 text-sm font-semibold text-white">
+        <Button className="h-9 rounded-full border-none border-cooper-yellow-500 bg-cooper-yellow-500 px-4 py-3 text-sm font-semibold text-white hover:border-cooper-yellow-300 hover:bg-cooper-yellow-300">
           + New Review
         </Button>
       </DialogTrigger>
@@ -80,7 +80,7 @@ export function NewReviewDialog() {
         <DialogHeader>
           <DialogTitle>Create New Review</DialogTitle>
           <DialogDescription>
-            Pick which company and role to create a review for, click next when
+            Pick the company and role to create a review for. Click next when
             done.
           </DialogDescription>
         </DialogHeader>
@@ -126,7 +126,7 @@ export function NewReviewDialog() {
           <DialogFooter>
             <Button
               type="submit"
-              className="bg-cooper-blue-400 hover:bg-cooper-blue-600"
+              className="border-none bg-cooper-blue-400 text-white hover:bg-cooper-blue-600"
               disabled={!roleLabel}
             >
               Next

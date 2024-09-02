@@ -89,7 +89,7 @@ export function CoopCycleSection({ textColor }: CoopCycleSectionProps) {
               <FormControl>
                 <select
                   className={cn(
-                    "border-cooper-blue-600 text-cooper-blue-600 w-full appearance-none rounded-md border-2 bg-transparent px-6 py-3 pr-8 text-2xl font-semibold",
+                    "w-full appearance-none rounded-md border-2 border-cooper-blue-600 bg-transparent px-6 py-3 pr-8 text-2xl font-semibold text-cooper-blue-600",
                   )}
                   {...field}
                 >
@@ -101,7 +101,7 @@ export function CoopCycleSection({ textColor }: CoopCycleSectionProps) {
                   ))}
                 </select>
               </FormControl>
-              <TriangleDownIcon className="text-cooper-blue-600 absolute right-5 top-5 h-6 w-6" />
+              <TriangleDownIcon className="absolute right-5 top-5 h-6 w-6 text-cooper-blue-600" />
             </div>
             <FormMessage />
           </FormItem>

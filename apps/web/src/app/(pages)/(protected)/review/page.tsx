@@ -1,5 +1,4 @@
 import { notFound, redirect } from "next/navigation";
-import { TRPCClientError } from "@trpc/client";
 
 import { auth } from "@cooper/auth";
 
@@ -13,12 +12,14 @@ export default async function Page({
     id?: string;
   };
 }) {
+  // Ensure user is authenticated
   const session = await auth();
 
   if (!session) {
     redirect("/");
   }
 
+  // Ensure role ID is provided
   if (!searchParams?.id) {
     notFound();
   }
@@ -54,7 +55,7 @@ export default async function Page({
     }
 
     return (
-      <div className="bg-cooper-blue-200 min-h-screen">
+      <div className="min-h-screen bg-cooper-blue-200">
         <div className="mx-auto w-full px-4 py-16">
           <div className="mx-auto max-w-6xl">
             <ReviewForm
@@ -66,10 +67,9 @@ export default async function Page({
         </div>
       </div>
     );
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    if (error instanceof TRPCClientError) {
-      // Handle individual errors here
-      notFound();
-    }
+    // Handle individual errors here
+    notFound();
   }
 }

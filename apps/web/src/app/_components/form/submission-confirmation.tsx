@@ -7,7 +7,7 @@ export function SubmissionConfirmation() {
   return (
     <div className="flex flex-col border-2">
       <div className="z-10 -mb-4 h-4 w-full rounded-t-xl bg-gradient-to-r from-rose-400 via-yellow-400 to-blue-600" />
-      <div className="text-cooper-blue-600 flex h-[80vh] w-full flex-col items-center justify-center space-y-6 rounded-xl bg-white px-8 py-32">
+      <div className="flex h-[80vh] w-full flex-col items-center justify-center space-y-6 rounded-xl bg-white px-8 py-32 text-cooper-blue-600">
         <Image
           src="./svg/verified.svg"
           width={125}

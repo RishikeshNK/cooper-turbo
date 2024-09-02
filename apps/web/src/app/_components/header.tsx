@@ -38,7 +38,7 @@ export default function Header({ session, auth }: HeaderProps) {
         </div>
         <h1
           className={cn(
-            "text-cooper-blue-600 mb-2 hidden text-5xl font-semibold lg:block",
+            "mb-2 hidden text-5xl font-semibold text-cooper-blue-600 lg:block",
             altivoFont.className,
           )}
         >
@@ -52,7 +52,7 @@ export default function Header({ session, auth }: HeaderProps) {
             className={cn(
               "font-semibold",
               pathname.includes("roles") &&
-                "decoration-cooper-pink-500 underline decoration-[3px] underline-offset-[6px]",
+                "underline decoration-cooper-pink-500 decoration-[3px] underline-offset-[6px]",
             )}
           >
             {" "}
@@ -64,7 +64,7 @@ export default function Header({ session, auth }: HeaderProps) {
             className={cn(
               "font-semibold",
               pathname.includes("companies") &&
-                "decoration-cooper-green-500 underline decoration-[3px] underline-offset-[6px]",
+                "underline decoration-cooper-green-500 decoration-[3px] underline-offset-[6px]",
             )}
           >
             Companies

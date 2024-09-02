@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 import base from "./base";
 
@@ -15,6 +16,57 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+      colors: {
+        "cooper-gray-100": "#DDE8F0",
+        "cooper-gray-200": "#64748B",
+        "cooper-blue-800": "#5A9478",
+        "cooper-blue-700": "#1D679C",
+        "cooper-blue-600": "#436F8E",
+        "cooper-blue-400": "#5E8BAB",
+        "cooper-blue-200": "#DEEAF8",
+        "cooper-yellow-300": "#FFBF47",
+        "cooper-yellow-500": "#FFA400",
+        "cooper-yellow-600": "#AFA800",
+        "cooper-pink-500": "#EA8FBA",
+        "cooper-green-500": "#619518",
+        "cooper-red-500": "#F05833",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

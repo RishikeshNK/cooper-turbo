@@ -58,7 +58,7 @@ export function ReviewCardPreview({
                 className="rounded-xl border"
               />
             ) : (
-              <div className="bg-cooper-blue-200 h-[50px] w-[50px] rounded-xl border"></div>
+              <div className="h-[50px] w-[50px] rounded-xl border bg-cooper-blue-200"></div>
             )}
             <div>
               <CardTitle className="text-md md:text-xl">

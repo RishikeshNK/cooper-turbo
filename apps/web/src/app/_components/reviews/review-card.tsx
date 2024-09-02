@@ -58,7 +58,7 @@ export function ReviewCard({ className, reviewObj }: ReviewCardProps) {
                 className="rounded-xl border"
               />
             ) : (
-              <div className="bg-cooper-blue-200 h-20 w-20 rounded-xl border"></div>
+              <div className="h-20 w-20 rounded-xl border bg-cooper-blue-200"></div>
             )}
             <div className="h-20">
               <CardTitle className="text-2xl">{role.data?.title}</CardTitle>
@@ -141,7 +141,7 @@ export function ReviewCard({ className, reviewObj }: ReviewCardProps) {
               return (
                 <div
                   key={benefit}
-                  className="bg-cooper-blue-400 text-nowrap rounded-full px-4 py-2 text-white"
+                  className="text-nowrap rounded-full bg-cooper-blue-400 px-4 py-2 text-white"
                 >
                   {benefit}
                 </div>
