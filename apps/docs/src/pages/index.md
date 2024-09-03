@@ -6,4 +6,4 @@ title: Home
 
 Cooper is a tool for Northeastern students to both submit reviews of their co-ops and filter through reviews of co-ops left by other students.
 
-[/docs](/docs/intro)
+[/docs](/docs/setup)
