@@ -56,6 +56,10 @@
     "studio": {
       "cache": false,
       "interactive": true
+    },
+    "start": {
+      "cache": false,
+      "interactive": true
     }
   },
   "globalEnv": [
