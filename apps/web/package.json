@@ -40,7 +40,7 @@
     "@cooper/prettier-config": "workspace:*",
     "@cooper/tailwind-config": "workspace:*",
     "@cooper/tsconfig": "workspace:*",
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.15",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "@types/react-scroll": "^1.8.10",
