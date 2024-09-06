@@ -54,11 +54,11 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "pnpm lint",
+      "pnpm format"
     ],
     "*.{md,json}": [
-      "prettier -w"
+      "pnpm format"
     ]
   }
 }
