@@ -10,6 +10,8 @@ Before you start you will need the following:
 
 :::danger[Docker]
 Setting up the database for local development is currently a work in progress given that the Drizzle connector only supports connections to Vercel / Neon. The documentation will be updated with new instructions for using the Postgres Docker container.
+
+You do _not_ need Docker as of now.
 :::
 
 ## Setup Instructions
@@ -58,7 +60,7 @@ While the Node Postgres work is in progress, the best way to get a Postgres data
 
 ### Authentication
 
-To generate `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET`, see [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en). To generate a new `AUTH_SECRET`, run the following command in your terminal and add it to the `.env` file.
+To generate `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET`, see [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en). Ensure that you set the value of Authorized JavaScript origins and Authorized redirect URIs to the appropriate URLs. To generate a new `AUTH_SECRET`, run the following command in your terminal and add it to the `.env` file.
 
 ```bash
 openssl rand -base64 32
