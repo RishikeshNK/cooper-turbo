@@ -28,9 +28,8 @@ Before you start you will need the following:
 
 > [!NOTE]
 > Setting up the database for local development is currently a work in progress given that the Drizzle connector only supports connections to Vercel / Neon. The documentation will be updated with new instructions for using the Postgres Docker container.
-
-You do _not_ need Docker as of now.
-:::
+>
+> You do _not_ need Docker as of now.
 
 ## Setup Instructions
 
